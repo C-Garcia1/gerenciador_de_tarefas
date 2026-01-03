@@ -1,30 +1,30 @@
 import os 
 from datetime import date
 
-# def salvar_em_txt():
-#     with open('tarefas.txt', 'w', encoding='utf-8') as arquivo:
-#         for tarefa in tarefas:
-#             # Cada linha do arquivo terá: Nome;Data;Status
-#             linha = f"{tarefa['Nome']};{tarefa['Data']};{tarefa['Status']}\n"
-#             arquivo.write(linha)
+def salvar_em_txt():
+    with open('tarefas.txt', 'w', encoding='utf-8') as arquivo:
+        for tarefa in tarefas:
+            # Cada linha do arquivo terá: Nome;Data;Status
+            linha = f"{tarefa['Nome']};{tarefa['Data']};{tarefa['Status']}\n"
+            arquivo.write(linha)
 
-# def carregar_de_txt():
-#     tarefas_carregadas = []
-#     try:
-#         with open('tarefas.txt', 'r', encoding='utf-8') as arquivo:
-#             for linha in arquivo:
-#                 nome, data, status = linha.strip().split(';')
-#                 tarefas_carregadas.append({
-#                     'Nome': nome,
-#                     'Data': data,
-#                     'Status': status == 'True'  # converte texto para booleano
-#                 })
-#     except FileNotFoundError:
-#         pass  # se o arquivo não existir, ignora
-#     return tarefas_carregadas
+def carregar_de_txt():
+    tarefas_carregadas = []
+    try:
+        with open('tarefas.txt', 'r', encoding='utf-8') as arquivo:
+            for linha in arquivo:
+                nome, data, status = linha.strip().split(';')
+                tarefas_carregadas.append({
+                    'Nome': nome,
+                    'Data': data,
+                    'Status': status == 'True'  # converte texto para booleano
+                })
+    except FileNotFoundError:
+        pass  # se o arquivo não existir, ignora
+    return tarefas_carregadas
 
 
-# tarefas = carregar_de_txt()
+tarefas = carregar_de_txt()
 
 def exibir_nome_do_programa():
     print('==== GERENCIADOR DE TAREFAS === TaskMaster ===')
